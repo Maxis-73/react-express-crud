@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum TipoProducto {
+  ZAPATO
+  BOLSA
+}
+
+model Producto {
+  id Int @id @default(autoincrement())
+  nombre String
+  color String
+  talla String
+  tipo TipoProducto
+  precio Float
+}
