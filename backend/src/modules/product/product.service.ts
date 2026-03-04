@@ -14,7 +14,9 @@ export const create = async (prod: CreateProductDTO) => {
 }
 
 export const getAll = async () => {
-  return prisma.producto.findMany();
+  return prisma.producto.findMany({
+    where: {active: true}
+  });
 }
 
 export const update = async (prodId: number, prod: CreateProductDTO) => {
@@ -27,5 +29,12 @@ export const update = async (prodId: number, prod: CreateProductDTO) => {
       tipo: prod.tipo,
       precio: prod.precio
     }
+  })
+}
+
+export const deleteProduct = async (prodId: number) => {
+  return prisma.producto.update({
+    where: { id: prodId },
+    data: {active: false}
   })
 }

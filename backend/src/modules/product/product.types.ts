@@ -7,7 +7,3 @@ export interface CreateProductDTO {
   tipo: TipoProducto;
   precio: number;
 }
-
-export interface Product extends CreateProductDTO {
-  id: number;
-}

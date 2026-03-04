@@ -22,4 +22,5 @@ model Producto {
   talla String
   tipo TipoProducto
   precio Float
+  active Boolean @default(true)
 }

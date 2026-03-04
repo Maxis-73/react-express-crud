@@ -29,3 +29,14 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
     next(error)
   }
 }
+
+export const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params;
+    const parserId = parseInt(Array.isArray(id) ? id[0] : id)
+    const result = await service.deleteProduct(parserId)
+    res.status(202).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
