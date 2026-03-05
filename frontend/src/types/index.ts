@@ -7,3 +7,5 @@ export interface Product {
     precio: number;
     active: boolean;
 }
+
+export type ProductForm = Omit<Product, "id" | "active">
