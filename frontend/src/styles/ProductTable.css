@@ -1,0 +1,131 @@
+.table-container {
+    overflow-x: auto;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.product-table thead {
+    background: #f8f9fa;
+}
+
+.product-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.product-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.product-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.type-badge.zapato {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.type-badge.bolsa {
+    background: #fce4ec;
+    color: #c2185b;
+}
+
+.price {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-edit {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.btn-edit:hover {
+    background: #ffe0b2;
+}
+
+.btn-delete {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.btn-delete:hover {
+    background: #ffcdd2;
+}
+
+.empty-message {
+    border: #8800ff 2px solid;
+    border-radius: 10px;
+    background-color: #c29ae6;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    padding: 2rem;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #5a5a5a;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.filters {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.search {
+    width: 400px;
+    margin-left: 3px;
+}
+
+.search,
+.filter {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
