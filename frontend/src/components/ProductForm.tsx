@@ -16,13 +16,16 @@ type Props = {
 export default function ProductForm({ editingProduct, onSubmit, onCancelEdit }: Props) {
     const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<ProductForm>();
     const tipo = watch("tipo");
+
     useEffect(() => {
         reset(editingProduct ?? EMPTY_FORM);
     }, [editingProduct, reset]);
+
     const handleSubmitForm = async (data: ProductForm) => {
         await onSubmit({ ...data, precio: Number(data.precio) });
         reset(EMPTY_FORM);
     };
+
     return (
         <form className="product-form" onSubmit={handleSubmit(handleSubmitForm)}>
             <h2 className="form-title">
@@ -65,9 +68,10 @@ export default function ProductForm({ editingProduct, onSubmit, onCancelEdit }: 
                     />
                 ) : (
                     <select className="form-select" {...register("talla", { required: "Es necesario seleccionar una talla de bolsa" })}>
-                        <option value="Chica">Chica</option>
+                        <option value="Pequeña">Pequeña</option>
                         <option value="Mediana">Mediana</option>
                         <option value="Grande">Grande</option>
+                        <option value="Extra Grande">Extra Grande</option>
                     </select>
                 )}
                 {errors.talla && <span className="form-error">{errors.talla.message}</span>}
