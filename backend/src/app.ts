@@ -9,7 +9,13 @@ app.use(cors())
 app.use("/api/productos", productRoutes)
 
 app.get("/health", (req, res) => {
-    res.send({"status": "OK"})
+    res.send({ "status": "OK" })
 })
+
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    res.status(err.status || 500).json({
+        message: err.message || "Error interno del servidor"
+    });
+});
 
 export default app;

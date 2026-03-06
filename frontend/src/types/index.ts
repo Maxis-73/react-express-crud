@@ -8,4 +8,9 @@ export interface Product {
     active: boolean;
 }
 
+export interface ProductResponse {
+    data: Product[];
+    message: string;
+}
+
 export type ProductForm = Omit<Product, "id" | "active">
